@@ -1,7 +1,7 @@
 // Обновленный тест про котиков с личностным результатом
 const catQuiz = {
     id: 'cat-quiz',
-    title: "Тест: Какой ты котик?",
+    title: "Тест: Який ти котик?",
     questions: [
         {
             text: "Какой твой идеальный выходной?",
@@ -42,19 +42,19 @@ const catQuiz = {
     ],
     results: {
         lazy: {
-            title: "🐱 Ленивый котик",
+            title: " Ленивый котик",
             description: "Ты - воплощение уюта и расслабленности! Ты ценишь комфорт превыше всего и умеешь наслаждаться каждым моментом покоя. Твоя философия - жизнь слишком коротка, чтобы спешить."
         },
         playful: {
-            title: "🎭 Игривый котик", 
+            title: "Игривый котик", 
             description: "Ты - вечный ребенок с огромным запасом энергии! Ты превращаешь рутину в игру и находишь радость в мелочах. С тобой никогда не скучно, ты заряжаешь оптимизмом всех вокруг."
         },
         hunter: {
-            title: "🎯 Котик-охотник",
+            title: "Котик-охотник",
             description: "Ты - целеустремленный и активный исследователь! Тебе важно достигать целей и покорять новые высоты. Ты быстро принимаешь решения и всегда готов к приключениям."
         },
         independent: {
-            title: "👑 Независимый котик",
+            title: "Независимый котик",
             description: "Ты - самодостаточная и мудрая личность! Ты ценишь свою свободу и умеешь наслаждаться одиночеством. Ты идешь по жизни своим путем и не зависишь от мнения окружающих."
         }
     }
@@ -111,7 +111,7 @@ function displayQuestion() {
     
     let html = `
         <div class="question">
-            <h3>Вопрос ${currentQuestion + 1} из ${currentQuiz.questions.length}</h3>
+            <h3>Питання ${currentQuestion + 1} з ${currentQuiz.questions.length}</h3>
             <p>${question.text}</p>
             <div class="options">
     `;
@@ -133,7 +133,7 @@ function displayQuestion() {
     // Обновляем кнопки навигации
     document.getElementById('prev-btn').style.display = currentQuestion === 0 ? 'none' : 'block';
     document.getElementById('next-btn').textContent = 
-        currentQuestion === currentQuiz.questions.length - 1 ? 'Завершить' : 'Далее';
+        currentQuestion === currentQuiz.questions.length - 1 ? 'Закінчити' : 'Далі';
         
     document.getElementById('prev-btn').style.display = 'block';
     document.getElementById('next-btn').style.display = 'block';
@@ -170,14 +170,14 @@ function showResults() {
         
         quizContent.innerHTML = `
             <div class="results-container">
-                <h3>Результаты теста!</h3>
+                <h3>Результати тесту!</h3>
                 <div class="score">${score}/${totalQuestions}</div>
-                <p>Вы ответили на ${score} из ${totalQuestions} вопросов</p>
+                <p>Ви відповіли на ${score} з ${totalQuestions} питань</p>
                 <button class="action-btn" onclick="loadQuiz(currentQuiz)" style="margin-top: 1rem;">
-                    Пройти еще раз
+                    Пройти ще раз
                 </button>
                 <button class="action-btn" onclick="showMainMenu()" style="margin-top: 1rem;">
-                    В главное меню
+                    В головне меню
                 </button>
             </div>
         `;
@@ -188,17 +188,17 @@ function showResults() {
         
         quizContent.innerHTML = `
             <div class="results-container">
-                <h3>Твой результат!</h3>
+                <h3>Твій результат!</h3>
                 <div class="personality-result">
                     <div class="personality-title">${result.title}</div>
                     <div class="personality-description">${result.description}</div>
                 </div>
-                <div class="score">${Math.round(personality.percentage)}% совпадение</div>
+                <div class="score">${Math.round(personality.percentage)}% співпадіння</div>
                 <button class="action-btn" onclick="loadQuiz(currentQuiz)" style="margin-top: 1rem;">
-                    Пройти еще раз
+                    Пройти ще раз
                 </button>
                 <button class="action-btn" onclick="showMainMenu()" style="margin-top: 1rem;">
-                    В главное меню
+                    В головне меню
                 </button>
             </div>
         `;
@@ -245,20 +245,20 @@ function addQuestion() {
     
     const questionHtml = `
         <div class="question-item" id="question-${questionCount}">
-            <input type="text" class="form-input question-text" placeholder="Текст вопроса">
+            <input type="text" class="form-input question-text" placeholder="Текст питання">
             
             <div class="options-container" id="options-${questionCount}">
                 <div class="option-input">
-                    <input type="text" class="form-input option-text" placeholder="Вариант ответа">
+                    <input type="text" class="form-input option-text" placeholder="Варіант відповіді">
                     <button type="button" class="remove-btn" onclick="removeOption(this)">✕</button>
                 </div>
             </div>
             
             <button type="button" class="action-btn" onclick="addOption(${questionCount})" style="margin: 0.5rem 0;">
-                + Добавить вариант
+                + Додати варіант
             </button>
             <button type="button" class="remove-btn" onclick="removeQuestion(${questionCount})">
-                Удалить вопрос
+                Видалити питання
             </button>
         </div>
     `;
@@ -271,7 +271,7 @@ function addOption(questionId) {
     
     const optionHtml = `
         <div class="option-input">
-            <input type="text" class="form-input option-text" placeholder="Вариант ответа">
+            <input type="text" class="form-input option-text" placeholder="Варіант відповіді">
             <button type="button" class="remove-btn" onclick="removeOption(this)">✕</button>
         </div>
     `;
@@ -310,12 +310,7 @@ function saveQuiz() {
     });
     
     if (title.trim() === '') {
-        alert('Введите название теста');
-        return;
-    }
-    
-    if (questions.length === 0) {
-        alert('Добавьте хотя бы один вопрос');
+        alert('Введіть назву тесту');
         return;
     }
     
@@ -327,7 +322,7 @@ function saveQuiz() {
     };
     
     saveQuizToStorage(newQuiz);
-    alert('Тест сохранен!');
+    alert('Ваш тест збережено!');
     
     // Очищаем форму
     document.getElementById('quiz-title-input').value = '';
@@ -354,7 +349,7 @@ function loadMyQuizzes() {
     const quizzes = getQuizzesFromStorage();
     
     if (quizzes.length === 0) {
-        quizzesList.innerHTML = '<p>У вас пока нет созданных тестов</p>';
+        quizzesList.innerHTML = '<p>У вас поки немає створених тестів</p>';
         return;
     }
     
@@ -362,11 +357,11 @@ function loadMyQuizzes() {
         <div class="quiz-item">
             <div>
                 <h3>${quiz.title}</h3>
-                <p>Вопросов: ${quiz.questions.length} | Создан: ${quiz.createdAt}</p>
+                <p>Питань: ${quiz.questions.length} | Створено: ${quiz.createdAt}</p>
             </div>
             <div class="quiz-actions">
                 <button class="action-btn" onclick="startQuiz('${quiz.id}')">Пройти</button>
-                <button class="remove-btn" onclick="deleteQuiz('${quiz.id}')">Удалить</button>
+                <button class="remove-btn" onclick="deleteQuiz('${quiz.id}')">Видалити</button>
             </div>
         </div>
     `).join('');
@@ -384,12 +379,10 @@ function startQuiz(quizId) {
 }
 
 function deleteQuiz(quizId) {
-    if (confirm('Удалить этот тест?')) {
-        const quizzes = getQuizzesFromStorage();
-        const filteredQuizzes = quizzes.filter(q => q.id !== quizId);
-        localStorage.setItem('userQuizzes', JSON.stringify(filteredQuizzes));
-        loadMyQuizzes();
-    }
+const quizzes = getQuizzesFromStorage();
+const filteredQuizzes = quizzes. filter (q => q.id !== quizId);
+localStorage.setItem('userQuizzes', JSON. stringify(filteredQuizzes));
+loadMyQuizzes ();
 }
 
 // Инициализация

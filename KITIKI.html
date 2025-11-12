@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,14 @@
     <!-- Главное меню -->
     <section id="main-menu" class="page active">
         <div class="header-nav">
-            <button class="nav-btn" onclick="showMainMenu()">Главное меню</button>
-            <button class="nav-btn" onclick="showMyQuizzes()">Мои тесты</button>
+            <button class="nav-btn" onclick="showMainMenu()">Головне меню</button>
+            <button class="nav-btn" onclick="showMyQuizzes()">Мої тести</button>
         </div>
         <div class="menu-container">
             <h1 class="main-title">Quiz Creator</h1>
             <div class="menu-buttons">
                 <button class="menu-btn" onclick="showQuiz()">Пройти тест</button>
-                <button class="menu-btn" onclick="showCreateQuiz()">Создать свой тест</button>
+                <button class="menu-btn" onclick="showCreateQuiz()">Створити свій тест</button>
             </div>
              <div class="menu-right">
         <img src="photo_5228916649463844604_y (1).jpg" alt="cat" class="menu-image">
@@ -29,16 +29,16 @@
     <!-- Пройти тест -->
     <section id="quiz-page" class="page">
         <div class="header-nav">
-            <button class="nav-btn" onclick="showMainMenu()">Главное меню</button>
-            <button class="nav-btn" onclick="showMyQuizzes()">Мои тесты</button>
+            <button class="nav-btn" onclick="showMainMenu()">Головне меню</button>
+            <button class="nav-btn" onclick="showMyQuizzes()">Мої тести</button>
         </div>
         <div class="container">
             <div class="quiz-container">
-                <h2 id="quiz-title">Тест: Какой ты котик?</h2>
+                <h2 id="quiz-title">Тест: Який ти котик?</h2>
                 <div id="quiz-content"></div>
                 <div class="quiz-nav">
                     <button class="nav-btn" id="prev-btn" onclick="prevQuestion()">Назад</button>
-                    <button class="nav-btn" id="next-btn" onclick="nextQuestion()">Далее</button>
+                    <button class="nav-btn" id="next-btn" onclick="nextQuestion()">Далі</button>
                 </div>
             </div>
         </div>
@@ -47,12 +47,12 @@
     <!-- Создать тест -->
     <section id="create-quiz" class="page">
         <div class="header-nav">
-            <button class="nav-btn" onclick="showMainMenu()">Главное меню</button>
-            <button class="nav-btn" onclick="showMyQuizzes()">Мои тесты</button>
+            <button class="nav-btn" onclick="showMainMenu()">Головне меню</button>
+            <button class="nav-btn" onclick="showMyQuizzes()">Мої тести</button>
         </div>
         <div class="container">
             <div class="create-container">
-                <h2>Создать свой тест</h2>
+                <h2>Створити свій тест</h2>
                 
                 <div class="form-group">
                     <input type="text" id="quiz-title-input" class="form-input" placeholder="Название теста">
@@ -61,8 +61,8 @@
                 <div id="questions-container"></div>
                 
                 <div class="form-buttons">
-                    <button class="action-btn" onclick="addQuestion()">Добавить вопрос</button>
-                    <button class="action-btn" onclick="saveQuiz()">Сохранить тест</button>
+                    <button class="action-btn" onclick="addQuestion()">Додати питання</button>
+                    <button class="action-btn" onclick="saveQuiz()">Зберегти тест</button>
                 </div>
             </div>
         </div>
@@ -71,12 +71,12 @@
     <!-- Мои тесты -->
     <section id="my-quizzes" class="page">
         <div class="header-nav">
-            <button class="nav-btn" onclick="showMainMenu()">Главное меню</button>
-            <button class="nav-btn" onclick="showMyQuizzes()">Мои тесты</button>
+            <button class="nav-btn" onclick="showMainMenu()">Головне меню</button>
+            <button class="nav-btn" onclick="showMyQuizzes()">Мої тести</button>
         </div>
         <div class="container">
             <div class="quizzes-container">
-                <h2>Мои тесты</h2>
+                <h2>Мої тести</h2>
                 <div id="quizzes-list"></div>
             </div>
         </div>
